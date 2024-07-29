@@ -26,7 +26,7 @@ h1 {
 
 /* ボタンのスタイル */
 button {
-  background-color: #4CAF50;
+  background-color: skyblue;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -41,7 +41,7 @@ button {
 }
 
 button:hover {
-  background-color: white;
+  background-color: yellow;
   color: black;
   border: 2px solid #4CAF50;
 }

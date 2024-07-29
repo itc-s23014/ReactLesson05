@@ -41,7 +41,7 @@ export default function Home() {
       <CSSTransition in={moving} timeout={500} classNames="floor">
         <div style={{ marginTop: '20px' }}>
           <h2>現在のフロア: {currentFloor}階</h2>
-          <h3>方向: {direction === 'up' ? '上昇中' : '下降中'}</h3>
+          <h3>方向: {direction === 'up' ? '上昇中↑' : '下降中↓'}</h3>
         </div>
       </CSSTransition>
       <div>
