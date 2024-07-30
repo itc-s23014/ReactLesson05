@@ -5,7 +5,7 @@ export default function Home() {
   const [currentFloor, setCurrentFloor] = useState(1);
   const [floorQueue, setFloorQueue] = useState([]);
   const [moving, setMoving] = useState(false);
-  const [direction, setDirection] = useState('up');
+  const [direction, setDirection] = useState(null); 
   const floors = [1, 2, 3, 4, 5];
 
   useEffect(() => {
@@ -21,6 +21,7 @@ export default function Home() {
       setCurrentFloor(floor);
       setFloorQueue((prevQueue) => prevQueue.slice(1));
       setMoving(false);
+      setDirection(null); 
     }, 1000);
   };
 
@@ -41,7 +42,9 @@ export default function Home() {
       <CSSTransition in={moving} timeout={500} classNames="floor">
         <div style={{ marginTop: '20px' }}>
           <h2>現在のフロア: {currentFloor}階</h2>
-          <h3>方向: {direction === 'up' ? '上昇中↑' : '下降中↓'}</h3>
+          {moving && (
+            <h3>方向: {direction === 'up' ? `${floorQueue[0]}階へ上昇中↑` : `${floorQueue[0]}階へ下降中↓`}</h3>
+          )}
         </div>
       </CSSTransition>
       <div>
@@ -50,3 +53,4 @@ export default function Home() {
     </div>
   );
 }
+
