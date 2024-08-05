@@ -27,7 +27,13 @@ export default function Home() {
   };
 
   const handleFloorRequest = (floor) => {
-    setFloorQueue((prevQueue) => [...prevQueue, floor]);
+	  
+    if (floor === currentFloor) {
+	alert("現在のフロアと同じフロアに移動することはできません");
+	return;
+	}
+    	setFloorQueue((prevQueue) => [...prevQueue, floor]);
+    
   };
 
 
