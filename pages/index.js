@@ -19,7 +19,7 @@ export default function Home() {
     setDirection(floor > currentFloor ? 'up' : 'down');
     setTimeout(() => {
       setCurrentFloor(floor);
-      setFloorQueue((prevQueue) => prevQueue.slice(1));
+      setFloorQueue((prevQueue) => prevQueue.slice(2));
       setMoving(false);
       setDirection(null); 
     }, 1000);
