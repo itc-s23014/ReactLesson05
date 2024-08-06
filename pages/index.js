@@ -33,9 +33,7 @@ export default function Home() {
 	return;
 	}
     	setFloorQueue((prevQueue) => [...prevQueue, floor]);
-    
   };
-
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -51,8 +49,8 @@ export default function Home() {
         <div style={{ marginTop: '20px' }}>
           <h2>現在のフロア: {currentFloor}階</h2>
           <h3>方向: {moving ? `${nextFloor}階へ${direction === 'up' ? '上昇中↑' : '下降中↓'}` : '停止中'}</h3>
-        </div>
-      </CSSTransition>
+       	 </div>
+        </CSSTransition>
       <div>
         <h3>キュー: {floorQueue.join(', ')}</h3>
       </div>
