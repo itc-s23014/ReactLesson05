@@ -71,18 +71,9 @@ export default function Home() {
       <CSSTransition in={moving} timeout={500} classNames="floor">
         <div style={{ marginTop: '20px' }}>
           <h2>現在のフロア: {currentFloor}階</h2>
-      //エラーメッセージ追加
           <h3>方向: {moving ? `${nextFloor}階へ${direction === 'up' ? '上昇中' : '下降中'}` : '停止中'}</h3>
        	 </div>
         </CSSTransition>
-
-          {moving && (
-            <h3>方向: {direction === 'up' ? `${floorQueue[0]}階へ上昇中` : `${floorQueue[0]}階へ下降中`}</h3>
-          )}
-        </div>
-      </CSSTransition>
-
-
       <div>
         <h3>キュー: {floorQueue.join(', ')}</h3>
       </div>
