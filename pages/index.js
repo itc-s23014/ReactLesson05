@@ -44,29 +44,30 @@ export default function Home() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <h1>エレベーターシミュレーター</h1>
-      <div>
-        {floors.map((floor) => (
-          <button key={floor} onClick={() => handleFloorRequest(floor)}>
-            {floor}階
-          </button>
-        ))}
-      </div>
+	  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+  <h1>エレベーターシミュレーター</h1>
+  <div style={{ display: 'flex', flexDirection: 'column' }}>
+    {floors.slice().reverse().map((floor) => (  
+      <button key={floor} onClick={() => handleFloorRequest(floor)}>
+        {floor}階
+      </button>
+    ))}
+  </div>
 
-      <CSSTransition in={moving} timeout={500} classNames="floor">
-        <div style={{ marginTop: '20px' }}>
-          <h2>現在のフロア: {currentFloor}階</h2>
-          {moving && (
-            <h3>方向: {direction === 'up' ? `${floorQueue[0]}階へ上昇中` : `${floorQueue[0]}階へ下降中`}</h3>
-          )}
-        </div>
-      </CSSTransition>
-
-      <div>
-        <h3>キュー: {floorQueue.join(', ')}</h3>
-      </div>
+  <CSSTransition in={moving} timeout={500} classNames="floor">
+    <div style={{ marginTop: '20px' }}>
+      <h2>現在のフロア: {currentFloor}階</h2>
+      {moving && (
+        <h3>方向: {direction === 'up' ? `${floorQueue[0]}階へ上昇中` : `${floorQueue[0]}階へ下降中`}</h3>
+      )}
     </div>
+  </CSSTransition>
+
+  <div>
+    <h3>キュー: {floorQueue.join(', ')}</h3>
+  </div>
+</div>
+
   );
 }
 
