@@ -16,6 +16,9 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
+  width: 80%;
+  max-width: 600px;
+  box-sizing: border-box;
 }
 
 /* 見出しのスタイル */
@@ -38,6 +41,7 @@ button {
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
