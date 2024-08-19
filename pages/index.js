@@ -68,7 +68,6 @@ export default function Home() {
           </button>
         ))}
       </div>
-
       <CSSTransition in={moving} timeout={500} classNames="floor">
         <div style={{ marginTop: '20px' }}>
           <h2>現在のフロア: {currentFloor}階</h2>
